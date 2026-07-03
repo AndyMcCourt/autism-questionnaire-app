@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AQ-50 Interactive Questionnaire</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">▣ Autism Spectrum Quotient (AQ-50)</div>
+        <h1>Interactive AQ-50 questionnaire</h1>
+        <p>Choose the response that best describes how strongly each statement applies to you. Your score updates instantly and a completion summary appears after all 50 items are answered.</p>
+        <p class="notice">This self-report questionnaire is for information only and is not a diagnosis. If the result raises concerns, consider discussing it with a qualified clinician.</p>
+      </section>
+
+      <aside class="scoreCard" aria-live="polite">
+        <div><span class="label">Progress</span><strong id="progressText">0/50</strong></div>
+        <div class="progressTrack"><div id="progressBar"></div></div>
+        <div><span class="label">Current AQ score</span><strong id="scoreText">0</strong></div>
+        <button type="button" id="resetButton">↺ Reset</button>
+      </aside>
+
+      <form class="questionnaire" id="questionnaire"></form>
+
+      <section class="result" id="result">
+        <div class="resultIcon">✓</div>
+        <div>
+          <h2 id="resultTitle">Answer every statement to complete your score</h2>
+          <p id="resultBody">50 items remaining.</p>
+          <div class="interpretation">
+            <div class="interpretationHeader">
+              <span class="label">Result interpretation</span>
+              <strong id="interpretationLabel">Interpretation available after completion</strong>
+            </div>
+            <meter id="interpretationScale" min="0" max="50" low="22" high="32" optimum="0" value="0"></meter>
+            <p id="interpretationText">Complete all 50 items to see a plain-language score band and suggested next step.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
